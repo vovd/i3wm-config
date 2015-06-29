@@ -1,0 +1,19 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+update_interval 1.0
+total_run_times 0
+short_units on
+if_up_strictness address
+use_spacer left
+override_utf8_locale no
+cpu_avg_samples 1
+
+TEXT
+[{ "full_text" : " Uptime: $uptime_short " , "color" : "\#B2E6DB" },
+{ "full_text" : " Batterie: ${battery_percent BAT0}% " , "color": "\#B2BCE6" },
+{ "full_text" : " Volume: ${exec amixer sget Master,0 | egrep -o '[0-9]+%'} " , "color" : "\#E6B2C0" },
+{ "full_text" : " RAM: ${memperc}% " , "color" : ${if_match ${memperc}<90}"\#E2B2E6"${else}"\#ff0000"${endif} },
+{ "full_text" : " ${time %R} " , "color" : "\#ffffff" }],
